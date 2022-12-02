@@ -1,16 +1,10 @@
-use std::io::{BufReader, BufRead};
+use std::io::{BufReader, BufRead, Lines};
 use std::fs::File;
 
-fn main() {
-    let file = match File::open("inputs/day1.txt"){
-        Err(msg) => panic!("couldn't open file; {}", msg),
-        Ok(f) => f,
-    };
-    let reader = BufReader::new(file);
-
+fn day1(lines : Lines<?>) {
     let mut elves = Vec::new();
     let mut elf = Vec::new();
-    for (_index, errLine) in reader.lines().enumerate() {
+    for (_index, errLine) in lines.enumerate() {
         if let Ok(line) = errLine{
             if line.is_empty(){
                 elves.push(elf);
@@ -38,4 +32,13 @@ fn main() {
     let three_max = max_cals + total_cals.pop().unwrap() + total_cals.pop().unwrap();
     println!("max cals: {}", max_cals);
     println!("top 3 max cals: {}", three_max);
+}
+
+fn main() {
+    let file = match File::open("inputs/day1.txt"){
+        Err(msg) => panic!("couldn't open file; {}", msg),
+        Ok(f) => f,
+    };
+    let reader = BufReader::new(file);
+    day1(reader.lines());
 }
