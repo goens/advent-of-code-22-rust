@@ -2,11 +2,11 @@ use std::io::{BufReader, Lines};
 use std::fs::File;
 
 
-pub fn day1(lines : Lines<BufReader<File>>) {
+pub fn run(lines : Lines<BufReader<File>>) {
     let mut elves = Vec::new();
     let mut elf = Vec::new();
-    for (_index, errLine) in lines.enumerate() {
-        if let Ok(line) = errLine{
+    for (_index, err_line) in lines.enumerate() {
+        if let Ok(line) = err_line{
             if line.is_empty(){
                 elves.push(elf);
                 elf = Vec::new();

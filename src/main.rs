@@ -11,7 +11,7 @@ macro_rules! run {
           Ok(f) => f,
       };
       let reader = BufReader::new(file);
-      $x::$x(reader.lines());
+      $x::run(reader.lines());
 	  };
 }
 

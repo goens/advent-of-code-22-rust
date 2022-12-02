@@ -115,7 +115,7 @@ impl Strategy{
 
 }
 
-pub fn day2(lines : Lines<BufReader<File>>) {
+pub fn run(lines : Lines<BufReader<File>>) {
     let mut res_naive = 0;
     let mut res_actual = 0;
     for (_index, err_line) in lines.enumerate() {
