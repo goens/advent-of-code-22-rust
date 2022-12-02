@@ -2,7 +2,7 @@ use std::io::{BufReader, Lines};
 use std::fs::File;
 
 
-pub fn run(lines : Lines<BufReader<File>>) {
+pub fn day1(lines : Lines<BufReader<File>>) {
     let mut elves = Vec::new();
     let mut elf = Vec::new();
     for (_index, errLine) in lines.enumerate() {
