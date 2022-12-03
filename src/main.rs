@@ -2,6 +2,7 @@ use std::io::{BufReader, BufRead};
 use std::fs::File;
 mod day1;
 mod day2;
+mod day3;
 
 macro_rules! run {
 	  ($x:ident) => {
@@ -18,4 +19,5 @@ macro_rules! run {
 fn main() {
     run!(day1);
     run!(day2);
+    run!(day3);
 }
